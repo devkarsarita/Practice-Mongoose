@@ -71,8 +71,17 @@ console.log(result);
 // createDocument();
 
 const getDocument = async () => {
-const result = await Playlist.find({ctype:"Frontend"}).select({name:1});
+const result = await Playlist
+// .find({ctype:{$in : ["Backend", "database"]}})                     /* comparison query operator mongoDB $in */
+// .find({$and:[{ctype: "database"},{learner:"Sarita Devkar"}]})      /* logical query operator */
+.find({learner: "Sarita Devkar"})
+.select({name : 1})
+// .count()
+.sort("name : 1");                                                    /* 1 means ascending order  and  -1 means descending order*/
+
 console.log(result);
 
 }
 getDocument();
+
+
