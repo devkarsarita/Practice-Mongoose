@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 // connection creat with mongodb
 mongoose.connect("mongodb://localhost:27017/userDB")
 .then(()=>console.log("connection successful..."))
-.catch((err) => console.log(err));
+.catch((err) => console.log("no connection"));
 
 // Schema
 // A Mongoose Schema defines the structure of the document , default values, validators, etc.,
